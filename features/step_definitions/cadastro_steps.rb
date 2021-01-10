@@ -4,12 +4,16 @@ Dado('que acesso a página de cadastro:') do
 end
   
 Quando('submeto o meu cadastro com:') do |table|
-   user = table.rows_hash
-   find('input[placeholder="Seu melhor email"]').set user[:email] 
-   find('[id="user_password"]').set user[:senha]
-   find('[id="user_password_confirmation"]').set user[:senha_confirma]
+    user = table.rows_hash
+
+    delorean user[:email]
+
+    find('input[placeholder="Seu melhor email"]').set user[:email] 
+    find('[id="user_password"]').set user[:senha]
+    find('[id="user_password_confirmation"]').set user[:senha_confirma]
+    click_button 'Cadastrar'
 end
   
 Então('devo ser redirecionado para a área logada') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_css '.dashboard'
 end

@@ -10,7 +10,7 @@ Cenário: cadastro
     Dado que acesso a página de cadastro:
     Quando submeto o meu cadastro com:
         |email          |andersonoliveira@gmail.com|
-        |senha          |4senha123|
+        |senha          |senha123|
         |senha_confirma |senha123|
     Então devo ser redirecionado para a área logada
 
