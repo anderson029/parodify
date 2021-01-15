@@ -8,8 +8,7 @@ Dado("que eu gosto de {string}") do |categoria|
 end
 
 Quando("toco a seguinte canção:") do |table|
-  @parody = table.rows_hash
-  tocando_music
+  tocando_music(table)
 end
 
 Então("essa paródia deve ficar em modo de reprodução") do
